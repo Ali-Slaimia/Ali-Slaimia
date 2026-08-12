@@ -3,7 +3,7 @@
 **Full-Stack Software Engineer** from Bizerte, Tunisia 🇹🇳  
 Engineering degree in Software Architecture (ESPRIT). I build production web apps end-to-end — React/Next.js on the front, Spring Boot & Node on the back, deployed and monitored on the cloud. Interested in AI integration, API security, and cloud/DevOps.
 
-🔭 Currently shipping **[ForgePipe](https://github.com/Ali-Slaimia/forgepipe)** (AWS serverless pipeline), **[RoleRadar](https://github.com/Ali-Slaimia/roleradar)** + **[InterviewArena](https://github.com/Ali-Slaimia/interviewarena)**, and **[SkyPulse](https://sky-pulse-ali.netlify.app)**. Open to full-stack roles in Europe.
+🔭 Currently shipping **[ForgePipe](https://github.com/Ali-Slaimia/forgepipe)** (AWS serverless pipeline), **[RoleRadar](https://github.com/Ali-Slaimia/roleradar)** + **[InterviewArena](https://github.com/Ali-Slaimia/interviewarena)**, **[SkyPulse](https://sky-pulse-ali.netlify.app)**, and **[Summer Is Coming](https://github.com/Ali-Slaimia/summer-is-coming)**. Open to full-stack roles in Europe.
 
 ### Tech
 `TypeScript` · `JavaScript` · `React` · `Next.js` · `Angular` · `Node.js` · `Spring Boot` · `Python`  
