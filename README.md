@@ -17,7 +17,7 @@ AI: `Machine Learning` · `NLP` · `Recommendation Systems` · `LLM apply packs`
 - **[skypulse](https://github.com/Ali-Slaimia/skypulse)** — Live aviation intelligence: ADS-B tracking, Tunisia delay board, hub boards, safety map, AI sky briefs. → **[live](https://sky-pulse-ali.netlify.app)**
 - **[el-wafa](https://github.com/Ali-Slaimia/el-wafa)** — Marketing site for Société El Wafa de Bâtiment (Bizerte). Next.js / React → **[live](https://el-wafa.netlify.app)**
 - **[Portfolio](https://github.com/Ali-Slaimia/Portfolio)** — Personal site → **[live](https://portfolio-alislaimia.netlify.app)**
-- **[summer-is-coming](https://github.com/Ali-Slaimia/summer-is-coming)** — Gym & nutrition tracker, built for how I actually train.
+- **[summer-is-coming](https://github.com/Ali-Slaimia/summer-is-coming)** — Personal gym & nutrition tracker: React + Vite, Supabase sync, offline storage, QR meal logging. Built for how I actually train.
 
 ### Reach me
 [LinkedIn](https://www.linkedin.com/in/ali-slaimia/) · Alislimia01@gmail.com
