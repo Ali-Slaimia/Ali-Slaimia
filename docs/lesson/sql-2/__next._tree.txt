@@ -1,0 +1,4 @@
+:HL["/Ali-Slaimia/_next/static/chunks/08-vyuonqjgoc.css","style"]
+:HL["/Ali-Slaimia/_next/static/media/051742360c26797e-s.p.1bkzbscqrt8rl.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Ali-Slaimia/_next/static/media/07454f8ad8aaac57-s.p.2kjei9psvcorz.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"lesson","param":null,"prefetchHints":4192,"slots":{"children":{"name":"lessonId","param":{"type":"d","key":"sql-2","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"K6SnraQDGXtTq2beV0i90"}
