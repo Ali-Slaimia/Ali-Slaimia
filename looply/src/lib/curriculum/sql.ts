@@ -1,0 +1,120 @@
+import { fill, lesson, mcq, order, output, unit } from "./helpers";
+
+export const sql = {
+  id: "sql",
+  title: "SQL",
+  tagline: "Ask the database the right question.",
+  icon: "🗄️",
+  accent: "#336791",
+  units: [
+    unit("sql-read", "Read path", "SELECT, filters, and the shape of a result set.", [
+      lesson("sql-1", "SELECT", [
+        fill(
+          "sql-1-a",
+          "Read every column.",
+          "SELECT ___ FROM users;",
+          ["*", "all", "users", "columns"],
+          "*",
+          "`*` means all columns. In production, prefer an explicit list.",
+          { language: "sql" },
+        ),
+        mcq(
+          "sql-1-b",
+          "Which clause picks the table?",
+          ["FROM", "WHERE", "SELECT", "LIMIT"],
+          "FROM",
+          "`SELECT` names columns. `FROM` names the source.",
+        ),
+        fill(
+          "sql-1-c",
+          "Alias a column.",
+          "SELECT name AS ___ FROM users;",
+          ["username", "name", "AS", "users.name"],
+          "username",
+          "`AS` renames a column in the result set without changing storage.",
+          { language: "sql" },
+        ),
+        output(
+          "sql-1-d",
+          "What does `SELECT COUNT(*) FROM users;` return conceptually?",
+          "SELECT COUNT(*) FROM users;",
+          ["One row with the number of users", "Every user row", "Only users with id", "A boolean"],
+          "One row with the number of users",
+          "Aggregates collapse rows. `COUNT(*)` counts them all.",
+          { language: "sql" },
+        ),
+      ]),
+      lesson("sql-2", "Filter & order", [
+        fill(
+          "sql-2-a",
+          "Keep active users.",
+          "SELECT * FROM users WHERE active = ___;",
+          ["TRUE", "NULL", "users", "1 = 0"],
+          "TRUE",
+          "`WHERE` filters rows before grouping. Compare booleans directly.",
+          { language: "sql" },
+        ),
+        mcq(
+          "sql-2-b",
+          "Which clause sorts the result?",
+          ["ORDER BY", "GROUP BY", "HAVING", "SORT"],
+          "ORDER BY",
+          "`ORDER BY col DESC` is the interview-safe way to get “latest first”.",
+        ),
+        fill(
+          "sql-2-c",
+          "Take the first 10 rows.",
+          "SELECT * FROM users LIMIT ___;",
+          ["10", "ALL", "ROW", "TOP"],
+          "10",
+          "`LIMIT` (Postgres/MySQL) caps the result. Pair it with `ORDER BY`.",
+          { language: "sql" },
+        ),
+        mcq(
+          "sql-2-d",
+          "`WHERE name LIKE 'A%'` matches…",
+          ["Names starting with A", "Names containing A", "Names ending with A", "Only the name A"],
+          "Names starting with A",
+          "`%` is a wildcard. `A%` = prefix, `%A` = suffix, `%A%` = contains.",
+        ),
+      ]),
+    ]),
+    unit("sql-join", "Combine", "JOINs — the difference between knowing SQL and guessing it.", [
+      lesson("sql-3", "JOIN", [
+        fill(
+          "sql-3-a",
+          "Match posts to their authors.",
+          "SELECT * FROM posts p JOIN users u ON p.user_id = ___;",
+          ["u.id", "p.id", "users", "p.user_id"],
+          "u.id",
+          "An `ON` clause is usually foreign key = primary key.",
+          { language: "sql" },
+        ),
+        mcq(
+          "sql-3-b",
+          "INNER JOIN keeps rows when…",
+          ["The match exists on both sides", "The left side always wins", "The right side is NULL", "Tables have the same name"],
+          "The match exists on both sides",
+          "INNER JOIN drops unmatched rows. LEFT JOIN keeps the left table.",
+        ),
+        mcq(
+          "sql-3-c",
+          "A LEFT JOIN with no match on the right fills those columns with…",
+          ["NULL", "0", "\"\"", "undefined"],
+          "NULL",
+          "That's how you find “users with zero orders”: `WHERE orders.id IS NULL`.",
+        ),
+        order(
+          "sql-3-d",
+          "List each order with its user email.",
+          [
+            "SELECT o.id, u.email",
+            "FROM orders o",
+            "JOIN users u ON u.id = o.user_id;",
+          ],
+          "Alias tables (`o`, `u`) so join conditions stay readable.",
+        ),
+      ]),
+    ]),
+  ],
+};

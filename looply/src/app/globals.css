@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #dff6ee;
+  --sheet: #f7fffc;
+  --ink: #1d3340;
+  --muted: #6b7f8a;
+  --line: #d7e8e2;
+  --mint: #19c8a0;
+  --mint-dark: #0f9b7c;
+  --gold: #ffc83d;
+  --heart: #ff4b6e;
+  --sky: #2f7cf6;
+}
+
+@theme inline {
+  --font-sans: var(--font-nunito);
+  --font-mono: var(--font-jetbrains);
+  --color-bg: var(--bg);
+  --color-sheet: var(--sheet);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-mint: var(--mint);
+  --color-mint-dark: var(--mint-dark);
+  --color-gold: var(--gold);
+  --color-heart: var(--heart);
+  --color-sky: var(--sky);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: radial-gradient(circle at top, #ecfff7 0%, #cfeee3 45%, #b9e4d8 100%);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+code,
+pre,
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 200, 61, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(255, 200, 61, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 200, 61, 0);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes confetti {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--dx), 90px, 0) rotate(220deg);
+    opacity: 0;
+  }
+}
+
+.bob {
+  animation: bob 2.8s ease-in-out infinite;
+}
+
+.pulse-ring {
+  animation: pulse-ring 1.8s ease-out infinite;
+}
+
+.shake {
+  animation: shake 0.35s ease-in-out;
+}
+
+.pop-in {
+  animation: pop 0.25s ease-out;
+}
+
+.pressable {
+  border-bottom-width: 5px;
+}
+
+.pressable:active:not(:disabled) {
+  transform: translateY(4px);
+  border-bottom-width: 1px;
+}
