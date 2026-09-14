@@ -37,10 +37,12 @@ export function GameProvider({ children }: { children: ReactNode }) {
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
-    // First paint matches SSR; then restore the local save.
+    try {
+      setState(reduce(loadState(), { type: "TICK", now: Date.now() }));
+    } finally {
+      setHydrated(true);
+    }
     // eslint-disable-next-line react-hooks/set-state-in-effect -- client save hydration
-    setState(reduce(loadState(), { type: "TICK", now: Date.now() }));
-    setHydrated(true);
   }, []);
 
   useEffect(() => {
