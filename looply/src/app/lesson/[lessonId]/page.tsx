@@ -1,24 +1,17 @@
-"use client";
+import { LessonClient } from "./lesson-client";
+import { TRACKS, allLessons } from "@/lib/curriculum";
 
-import { LessonPlayer } from "@/components/LessonPlayer";
-import { findLesson } from "@/lib/curriculum";
-import Link from "next/link";
-import { useParams } from "next/navigation";
+export function generateStaticParams() {
+  return TRACKS.flatMap((track) =>
+    allLessons(track).map((lesson) => ({ lessonId: lesson.id })),
+  );
+}
 
-export default function LessonPage() {
-  const params = useParams<{ lessonId: string }>();
-  const found = findLesson(params.lessonId);
-
-  if (!found) {
-    return (
-      <div className="mx-auto flex min-h-dvh max-w-[430px] flex-col items-center justify-center gap-3 bg-sheet px-6 text-center">
-        <p className="text-2xl font-black">Lesson not found</p>
-        <Link href="/" className="font-extrabold text-mint-dark">
-          Back to the path
-        </Link>
-      </div>
-    );
-  }
-
-  return <LessonPlayer lesson={found.lesson} />;
+export default async function LessonPage({
+  params,
+}: {
+  params: Promise<{ lessonId: string }>;
+}) {
+  const { lessonId } = await params;
+  return <LessonClient lessonId={lessonId} />;
 }

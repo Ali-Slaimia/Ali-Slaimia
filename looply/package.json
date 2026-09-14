@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --hostname :: -p 3000",
     "build": "next build",
+    "export:web": "LOOPLY_EXPORT=1 LOOPLY_BASE_PATH=/Ali-Slaimia next build",
     "start": "next start",
     "lint": "eslint .",
     "test": "vitest run"

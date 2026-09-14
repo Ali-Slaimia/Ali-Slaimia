@@ -2,7 +2,7 @@
 
 **Duolingo for developers** — daily syntax drills, streaks, hearts, XP, and a winding skill path across JavaScript, TypeScript, Python, React, and SQL.
 
-> Muscle memory for code. Five minutes a day, not another 40-hour course tab you’ll never reopen.
+**Live:** [ali-slaimia.github.io/Ali-Slaimia](https://ali-slaimia.github.io/Ali-Slaimia/) · **Code:** [github.com/Ali-Slaimia/Ali-Slaimia/tree/main/looply](https://github.com/Ali-Slaimia/Ali-Slaimia/tree/main/looply)
 
 ## Why this exists
 
