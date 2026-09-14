@@ -11,7 +11,7 @@ Engineering degree in Software Architecture (ESPRIT). I build production web app
 AI: `Machine Learning` · `NLP` · `Recommendation Systems` · `LLM apply packs`
 
 ### Featured projects
-- **[looply](https://github.com/Ali-Slaimia/Ali-Slaimia/tree/main/looply)** — Duolingo for developers: daily JS/TS/Python/React/SQL drills, streaks, hearts, XP, leagues, and a winding skill path. Progress lives in the browser. → **[live](https://ali-slaimia.github.io/Ali-Slaimia/)**
+- **[looply](https://github.com/Ali-Slaimia/Ali-Slaimia/tree/main/looply)** — Duolingo for developers: daily JS/TS/Python/React/SQL drills, streaks, hearts, XP, leagues, and a winding skill path. Progress syncs to a hash of your network IP (plus a save code). GitHub lists the source as this profile repo **Ali-Slaimia**, not a separate `looply` repo — open the [`looply/`](https://github.com/Ali-Slaimia/Ali-Slaimia/tree/main/looply) folder. → **[live](https://ali-slaimia.github.io/Ali-Slaimia/)**
 - **[forgepipe](https://github.com/Ali-Slaimia/forgepipe)** — Multi-tenant AWS event pipeline: API Gateway + Cognito, Lambda, DynamoDB, SQS/DLQ, EventBridge, Step Functions, S3, CDK, GitHub OIDC deploy, Next.js ops console.
 - **[roleradar](https://github.com/Ali-Slaimia/roleradar)** — Tunisia → Europe job radar: live Remotive/RemoteOK/Arbeitnow/Jobicy feeds, CV scan, skill match scores, AI cover letters & interview prep.
 - **[interviewarena](https://github.com/Ali-Slaimia/interviewarena)** — AI mock interviews for RoleRadar jobs: 5 questions, scored answers, stronger-answer drafts (local AI fallback).

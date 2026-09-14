@@ -4,6 +4,8 @@
 
 **Live:** [ali-slaimia.github.io/Ali-Slaimia](https://ali-slaimia.github.io/Ali-Slaimia/) · **Code:** [github.com/Ali-Slaimia/Ali-Slaimia/tree/main/looply](https://github.com/Ali-Slaimia/Ali-Slaimia/tree/main/looply)
 
+GitHub does not list `looply` as its own repository. The app lives in the special profile README repo named **Ali-Slaimia** (same as the username). In [Repositories](https://github.com/Ali-Slaimia?tab=repositories) open **Ali-Slaimia**, then the `looply/` folder.
+
 ## Why this exists
 
 Most “learn to code” products dump a video or a sandbox on you. Looply copies the thing Duolingo got right: **tiny questions, instant feedback, a reason to come back tomorrow**.
@@ -21,7 +23,7 @@ Questions are interview-shaped on purpose — `typeof null`, `===` vs `==`, Reac
 - Heart-free practice queue built from misses
 - Shop (refills, freeze, double XP, Loopy cosmetics)
 - Achievements
-- Progress saved in `localStorage` — no account required
+- Progress saved in the browser and synced to a hash of your public IP (never the raw address), plus a `LOOP-XXXXXX` save code for a different network
 
 ## Stack
 
@@ -50,7 +52,9 @@ npm run build
 | --- | --- |
 | `src/lib/game.ts` | Pure state machine: XP, streaks, hearts, shop, achievements |
 | `src/lib/curriculum/` | Track content (JS / TS / Python / React / SQL) |
-| `src/lib/store.tsx` | React context + `localStorage` persistence |
+| `src/lib/store.tsx` | React context + local + hashed-IP cloud persistence |
+| `src/lib/save.ts` | Save codes, merge rules, localStorage envelope |
+| `src/lib/cloud.ts` | Public IP lookup and cloud backup |
 | `src/components/` | Path, lesson player, mascot, 3D pressable buttons |
 | `src/app/` | Routes: learn, lesson, practice, league, shop, profile |
 
@@ -62,7 +66,7 @@ Next.js · TypeScript · React · Tailwind · Vitest
 - Designed a gamified learning product with streaks, hearts, XP, leagues, and a winding skill path modeled on language-learning apps.
 - Authored a typed curriculum and five exercise engines (MCQ, fill-in, output, typed answer, code ordering) across JS, TS, Python, React, and SQL.
 - Isolated all progress rules in a pure reducer with Vitest coverage for streaks, freezes, weekly resets, and shop purchases.
-- Persisted progress client-side so the demo runs anywhere without a backend.
+- Persisted progress in the browser and synced it across devices on the same network via a hashed public IP, with a save code for moving between networks.
 
 ## Author
 
