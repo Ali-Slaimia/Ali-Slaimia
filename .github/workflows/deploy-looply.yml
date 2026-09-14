@@ -32,7 +32,7 @@ jobs:
         env:
           LOOPLY_EXPORT: "1"
           LOOPLY_BASE_PATH: /Ali-Slaimia
-        run: npm ci && npm run build
+        run: npm ci && npm run build && node -e "require('fs').writeFileSync('out/.nojekyll','')"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: looply/out
