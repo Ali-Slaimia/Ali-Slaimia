@@ -28,7 +28,7 @@ export default function LeaderboardPage() {
             key={row.name}
             className={cn(
               "flex items-center justify-between rounded-2xl border-2 px-4 py-3 font-extrabold",
-              row.you ? "border-mint bg-[#e8fff8]" : "border-line bg-white",
+              row.you ? "border-[#14342c] bg-[#e8fff8] shadow-[0_4px_0_#14342c]" : "border-line bg-white",
             )}
           >
             <span>

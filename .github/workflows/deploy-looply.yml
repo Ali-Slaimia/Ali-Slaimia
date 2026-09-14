@@ -1,10 +1,11 @@
-name: Deploy Looply
+name: Deploy GitHub Pages
 
 on:
   push:
     branches: [main]
     paths:
       - "looply/**"
+      - "site/**"
       - ".github/workflows/deploy-looply.yml"
   workflow_dispatch:
 
@@ -26,16 +27,30 @@ jobs:
         with:
           node-version: "22"
           cache: npm
-          cache-dependency-path: looply/package-lock.json
-      - name: Build static Looply
+          cache-dependency-path: |
+            looply/package-lock.json
+            site/package-lock.json
+      - name: Build Looply
         working-directory: looply
         env:
           LOOPLY_EXPORT: "1"
           LOOPLY_BASE_PATH: /Ali-Slaimia
         run: npm ci && npm run build && node -e "require('fs').writeFileSync('out/.nojekyll','')"
+      - name: Build portfolio
+        working-directory: site
+        env:
+          SITE_EXPORT: "1"
+          SITE_BASE_PATH: /Ali-Slaimia/portfolio
+        run: npm ci && npm run build && node -e "require('fs').writeFileSync('out/.nojekyll','')"
+      - name: Compose Pages folder
+        run: |
+          mkdir -p combined/portfolio
+          cp -a looply/out/. combined/
+          cp -a site/out/. combined/portfolio/
+          touch combined/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: looply/out
+          path: combined
 
   deploy:
     needs: build

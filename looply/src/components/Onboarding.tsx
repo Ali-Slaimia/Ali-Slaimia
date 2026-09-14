@@ -17,8 +17,16 @@ export function Onboarding() {
   const [dailyGoal, setDailyGoal] = useState<DailyGoal>(20);
 
   return (
-    <div className="mx-auto flex min-h-dvh w-full max-w-[430px] flex-col bg-sheet px-6 py-8">
-      <Mascot mood={step === 4 ? "celebrate" : "happy"} className="mx-auto h-36 w-36" />
+    <div className="phone-shell mx-auto flex min-h-dvh w-full max-w-[430px] flex-col rounded-[28px] px-6 py-8 sm:my-6 sm:min-h-[min(100dvh,920px)]">
+      <div className="mb-4 flex justify-center gap-1.5 pt-2">
+        {[0, 1, 2, 3, 4].map((item) => (
+          <span
+            key={item}
+            className={`h-2.5 rounded-full ${item === step ? "w-7 bg-mint" : "w-2.5 bg-line"}`}
+          />
+        ))}
+      </div>
+      <Mascot mood={step === 4 ? "celebrate" : "happy"} className="mx-auto h-40 w-40" />
       {step === 0 && (
         <Copy
           title="I'm Loopy."
@@ -34,8 +42,8 @@ export function Onboarding() {
                 key={track.id}
                 type="button"
                 onClick={() => setTrackId(track.id)}
-                className={`rounded-2xl border-2 border-b-4 px-4 py-3 text-left ${
-                  trackId === track.id ? "border-mint bg-[#e8fff8]" : "border-line bg-white"
+                className={`rounded-2xl border-[3px] border-b-4 px-4 py-3 text-left ${
+                  trackId === track.id ? "border-[#14342c] bg-[#e8fff8]" : "border-line bg-white"
                 }`}
               >
                 <p className="font-black">
@@ -56,8 +64,8 @@ export function Onboarding() {
                 key={goal}
                 type="button"
                 onClick={() => setDailyGoal(goal)}
-                className={`rounded-2xl border-2 border-b-4 py-6 font-black ${
-                  dailyGoal === goal ? "border-gold bg-[#fff6d9]" : "border-line bg-white"
+                className={`rounded-2xl border-[3px] border-b-4 py-6 font-black ${
+                  dailyGoal === goal ? "border-[#c48512] bg-[#fff6d9]" : "border-line bg-white"
                 }`}
               >
                 {goal}
@@ -73,7 +81,7 @@ export function Onboarding() {
           <input
             value={name}
             onChange={(event) => setName(event.target.value)}
-            className="mt-4 rounded-2xl border-2 border-b-4 border-line bg-white px-4 py-3 text-lg font-bold outline-none focus:border-mint"
+            className="mt-4 rounded-2xl border-[3px] border-b-4 border-line bg-white px-4 py-3 text-lg font-bold outline-none focus:border-mint"
           />
         </>
       )}
@@ -84,7 +92,7 @@ export function Onboarding() {
         />
       )}
       <Pressable
-        className="mt-auto"
+        className="shine mt-auto"
         onClick={() => {
           if (step < 4) {
             setStep((current) => current + 1);

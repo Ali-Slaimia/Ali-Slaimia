@@ -11,13 +11,13 @@ Engineering degree in Software Architecture (ESPRIT). I build production web app
 AI: `Machine Learning` · `NLP` · `Recommendation Systems` · `LLM apply packs`
 
 ### Featured projects
-- **[looply](https://github.com/Ali-Slaimia/Ali-Slaimia/tree/main/looply)** — Duolingo for developers: daily JS/TS/Python/React/SQL drills, streaks, hearts, XP, leagues, and a winding skill path. Progress lives in the browser. → **[live](https://ali-slaimia.github.io/Ali-Slaimia/)**
+- **[looply](https://github.com/Ali-Slaimia/Ali-Slaimia/tree/main/looply)** — Duolingo for developers: daily JS/TS/Python/React/SQL drills, streaks, hearts, XP, leagues, and a winding skill path. Progress syncs to a hash of your network IP (plus a save code). GitHub lists the source as this profile repo **Ali-Slaimia**, not a separate `looply` repo — open the [`looply/`](https://github.com/Ali-Slaimia/Ali-Slaimia/tree/main/looply) folder. → **[live](https://ali-slaimia.github.io/Ali-Slaimia/)**
 - **[forgepipe](https://github.com/Ali-Slaimia/forgepipe)** — Multi-tenant AWS event pipeline: API Gateway + Cognito, Lambda, DynamoDB, SQS/DLQ, EventBridge, Step Functions, S3, CDK, GitHub OIDC deploy, Next.js ops console.
 - **[roleradar](https://github.com/Ali-Slaimia/roleradar)** — Tunisia → Europe job radar: live Remotive/RemoteOK/Arbeitnow/Jobicy feeds, CV scan, skill match scores, AI cover letters & interview prep.
 - **[interviewarena](https://github.com/Ali-Slaimia/interviewarena)** — AI mock interviews for RoleRadar jobs: 5 questions, scored answers, stronger-answer drafts (local AI fallback).
 - **[skypulse](https://github.com/Ali-Slaimia/skypulse)** — Live aviation intelligence: ADS-B tracking, Tunisia delay board, hub boards, safety map, AI sky briefs. → **[live](https://sky-pulse-ali.netlify.app)**
 - **[el-wafa](https://github.com/Ali-Slaimia/el-wafa)** — Marketing site for Société El Wafa de Bâtiment (Bizerte). Next.js / React → **[live](https://el-wafa.netlify.app)**
-- **[Portfolio](https://github.com/Ali-Slaimia/Portfolio)** — Personal site → **[live](https://portfolio-alislaimia.netlify.app)**
+- **[Portfolio](https://github.com/Ali-Slaimia/Portfolio)** — Personal site → **[Netlify](https://portfolio-alislaimia.netlify.app)** · **[GitHub Pages with Looply](https://ali-slaimia.github.io/Ali-Slaimia/portfolio/)**
 - **[summer-is-coming](https://github.com/Ali-Slaimia/summer-is-coming)** — Gym & nutrition tracker, built for how I actually train.
 
 ### Reach me

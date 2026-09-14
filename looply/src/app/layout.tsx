@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Nunito } from "next/font/google";
 import { Providers } from "@/components/Providers";
+import { WorldBackdrop } from "@/components/WorldBackdrop";
 import "./globals.css";
 
 const nunito = Nunito({
@@ -28,7 +29,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${nunito.variable} ${jetbrains.variable} h-full antialiased`}>
-      <body className="min-h-full">
+      <body className="relative min-h-full">
+        <WorldBackdrop />
         <Providers>{children}</Providers>
       </body>
     </html>

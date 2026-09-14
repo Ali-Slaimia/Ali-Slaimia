@@ -24,6 +24,7 @@ export function Pressable({
         "pressable rounded-2xl px-4 py-3.5 text-sm font-extrabold uppercase tracking-wide",
         "transition-[transform,border-width] duration-75 disabled:pointer-events-none disabled:opacity-40",
         tones[tone],
+        tone === "mint" && "shine",
         className,
       )}
       {...props}
