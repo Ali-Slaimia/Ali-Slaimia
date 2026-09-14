@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   images: { unoptimized: true },
   trailingSlash: true,
   basePath: isPages ? `/${repo}` : "",
+  agentRules: false,
 };
 
 export default nextConfig;

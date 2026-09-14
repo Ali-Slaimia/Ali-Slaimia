@@ -93,7 +93,7 @@ a { color: inherit; }
 .stage {
   width: min(560px, 100%);
   min-height: 100dvh;
-  padding: 18px 18px 108px;
+  padding: 18px 18px 132px;
   position: relative;
 }
 
@@ -146,17 +146,25 @@ a { color: inherit; }
   justify-content: center;
 }
 
-.topbar, .page-head, .profile-hero, .league-hero {
+.topbar {
   display: flex;
   justify-content: space-between;
   gap: 12px;
   align-items: center;
 }
 
+.page-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
 .brand, .profile-hero, .league-hero, .prompt-row {
   display: flex;
-  gap: 12px;
+  gap: 14px;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .eyebrow {
@@ -422,14 +430,24 @@ h2 { font-size: 18px; margin-bottom: 10px; }
 
 .board { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .board-row { display: grid; grid-template-columns: 36px 1fr auto; gap: 10px; align-items: center; padding: 12px; }
-.board-row.you { border-color: var(--mint); }
+.board-row.you {
+  border-color: var(--mint);
+  background: rgba(124, 255, 178, 0.08);
+  position: sticky;
+  bottom: 86px;
+  z-index: 6;
+}
 .board-row small, .badge small, .unit-progress small { color: var(--muted); display: block; }
 .rank { font-weight: 900; color: var(--gold); }
 .xp-num { font-weight: 800; }
 
 .badges, .unit-progress, .settings { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
-.badge { display: flex; gap: 12px; padding: 12px; opacity: 0.4; align-items: center; }
-.badge.on { opacity: 1; }
+.badge { display: flex; gap: 12px; padding: 12px; opacity: 0.38; align-items: center; }
+.badge.on {
+  opacity: 1;
+  border-color: var(--mint);
+  box-shadow: 0 0 0 1px rgba(124, 255, 178, 0.2);
+}
 .badge span { font-size: 24px; }
 .unit-progress li { display: flex; gap: 12px; align-items: center; padding: 8px 0; }
 
