@@ -39,7 +39,7 @@ export function Hero() {
 
         <div className="animate-fade-up animate-delay-3 mt-10 flex flex-wrap items-center gap-4">
           <a
-            href="https://ali-slaimia.github.io/Ali-Slaimia/"
+            href="/Ali-Slaimia/"
             className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-6 py-3.5 text-base font-semibold text-zinc-950 transition hover:bg-emerald-400"
           >
             Play Looply

@@ -32,7 +32,7 @@ export function Navbar() {
         </ul>
 
         <a
-          href="https://ali-slaimia.github.io/Ali-Slaimia/"
+          href="/Ali-Slaimia/"
           className="hidden rounded-full border border-emerald-500/40 px-4 py-2.5 text-base font-medium text-emerald-300 transition hover:bg-emerald-500/10 md:inline-flex"
         >
           Play Looply
@@ -87,7 +87,7 @@ function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
         ))}
         <li>
           <a
-            href="https://ali-slaimia.github.io/Ali-Slaimia/"
+            href="/Ali-Slaimia/"
             className="text-lg text-emerald-300"
             onClick={onNavigate}
           >

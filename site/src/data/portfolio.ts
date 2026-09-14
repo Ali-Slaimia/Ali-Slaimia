@@ -39,7 +39,7 @@ export const projects = [
       "Daily coding drills with streaks, hearts, XP, leagues, and a winding skill path across JavaScript, TypeScript, Python, React, and SQL. Interview-shaped questions, a mistake review queue, and progress that follows your network (hashed IP) plus a save code.",
     impact: "Live on GitHub Pages · ali-slaimia.github.io/Ali-Slaimia",
     tech: ["Next.js", "TypeScript", "React", "Tailwind", "Vitest"],
-    liveUrl: "https://ali-slaimia.github.io/Ali-Slaimia/",
+    liveUrl: "/Ali-Slaimia/",
     repoUrl: "https://github.com/Ali-Slaimia/Ali-Slaimia/tree/main/looply",
     featured: true,
   },
