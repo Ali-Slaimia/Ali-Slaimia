@@ -24,7 +24,7 @@ export function BottomNav() {
             href={item.href}
             className={cn(
               "flex flex-col items-center gap-1 rounded-xl py-1 text-[11px] font-extrabold uppercase",
-              active ? "text-mint-dark" : "text-muted",
+              active ? "bg-[#e8fff8] text-mint-dark" : "text-muted",
             )}
           >
             <span className="text-lg leading-none">{item.icon}</span>
