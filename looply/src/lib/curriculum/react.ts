@@ -1,0 +1,148 @@
+import { fill, lesson, mcq, order, output, typeIn, unit } from "./helpers";
+
+export const react = {
+  id: "react",
+  title: "React",
+  tagline: "UI as a function of state.",
+  icon: "⚛️",
+  accent: "#61dafb",
+  units: [
+    unit("rx-ui", "UI core", "JSX, props, and the render mental model.", [
+      lesson("rx-1", "JSX", [
+        mcq(
+          "rx-1-a",
+          "JSX must have how many root nodes (without a fragment)?",
+          ["One", "Zero", "As many as you want", "Two"],
+          "One",
+          "A component returns one tree. Wrap siblings in a fragment `<>...</>` if needed.",
+        ),
+        fill(
+          "rx-1-b",
+          "The attribute for CSS classes in JSX.",
+          "<div ___=\"card\">",
+          ["className", "class", "classList", "css"],
+          "className",
+          "`class` is a reserved word in JS, so React uses `className`.",
+          { language: "jsx" },
+        ),
+        fill(
+          "rx-1-c",
+          "Embed a value in JSX.",
+          "<h1>Hello {___}</h1>",
+          ["name", "\"name\"", "$name", "name()"],
+          "name",
+          "Curly braces evaluate a JavaScript expression.",
+          { language: "jsx" },
+        ),
+        mcq(
+          "rx-1-d",
+          "Props are…",
+          ["Read-only inputs to a component", "Mutable global state", "CSS only", "Always strings"],
+          "Read-only inputs to a component",
+          "Never mutate props. Lift state up or copy into local state.",
+        ),
+      ]),
+      lesson("rx-2", "State", [
+        fill(
+          "rx-2-a",
+          "Create state.",
+          "const [n, setN] = ___(0);",
+          ["useState", "useEffect", "useRef", "useMemo"],
+          "useState",
+          "`useState` returns the current value and a setter. Calling the setter queues a render.",
+          { language: "jsx" },
+        ),
+        mcq(
+          "rx-2-b",
+          "How should you update state from the previous value?",
+          ["setN((n) => n + 1)", "n++", "setN(n++)", "this.n += 1"],
+          "setN((n) => n + 1)",
+          "Functional updates avoid stale closures when updates batch.",
+        ),
+        output(
+          "rx-2-c",
+          "After one click, what does this intend to show?",
+          "function Counter() {\n  const [n, setN] = useState(0);\n  return <button onClick={() => setN(n + 1)}>{n}</button>;\n}",
+          ["A number that goes 0, 1, 2…", "Always 0", "undefined", "NaN"],
+          "A number that goes 0, 1, 2…",
+          "Each click schedules a re-render with the next number.",
+          { language: "jsx" },
+        ),
+        typeIn(
+          "rx-2-d",
+          "The hook that stores a value that survives renders (useState / useId):",
+          "useState",
+          "`useState` is the default memory of a component.",
+        ),
+      ]),
+    ]),
+    unit("rx-lists", "Lists & time", "Keys, effects, and the bugs they prevent.", [
+      lesson("rx-3", "Lists", [
+        mcq(
+          "rx-3-a",
+          "What should you use as a `key` when the list can reorder?",
+          ["A stable id", "The array index", "Math.random()", "The component name"],
+          "A stable id",
+          "Index keys break state when items move. Stable ids keep identity.",
+        ),
+        fill(
+          "rx-3-b",
+          "Render a list.",
+          "items.map((item) => <Row key={item.id} ___={item} />);",
+          ["item", "props", "value", "data"],
+          "item",
+          "Pass the whole object or fields as props. `key` is not a prop you read inside `Row`.",
+          { language: "jsx" },
+        ),
+        mcq(
+          "rx-3-c",
+          "Why is `key` not visible in the child as `props.key`?",
+          ["React consumes it for reconciliation", "It is a CSS thing", "It is undefined always", "Because keys are private class fields"],
+          "React consumes it for reconciliation",
+          "`key` is a hint to React, not data for your component.",
+        ),
+        order(
+          "rx-3-d",
+          "Map users to a list of names.",
+          [
+            "function Names({ users }) {",
+            "  return users.map((u) => <p key={u.id}>{u.name}</p>);",
+            "}",
+          ],
+          "Always return JSX from `map` with a stable `key` on the outermost element.",
+        ),
+      ]),
+      lesson("rx-4", "Effects", [
+        fill(
+          "rx-4-a",
+          "Run after paint.",
+          "useEffect(() => {\n  document.title = title;\n}, [___]);",
+          ["title", "[]", "document", "useState"],
+          "title",
+          "Dependency arrays tell React when to re-run the effect.",
+          { language: "jsx" },
+        ),
+        mcq(
+          "rx-4-b",
+          "An effect with `[]` as dependencies runs…",
+          ["After the first paint only", "Every render", "Never", "Only on unmount"],
+          "After the first paint only",
+          "Empty deps ≈ mount. Return a cleanup function for unmount.",
+        ),
+        mcq(
+          "rx-4-c",
+          "Fetching in `useEffect` should usually…",
+          ["Ignore stale responses or abort", "Write to a module cache only", "Block render with await", "Call setState during render"],
+          "Ignore stale responses or abort",
+          "Race conditions happen when a slow request finishes after a newer one.",
+        ),
+        typeIn(
+          "rx-4-d",
+          "The hook name for side effects:",
+          "useEffect",
+          "If you can compute it during render, you probably don't need an effect.",
+        ),
+      ]),
+    ]),
+  ],
+};
