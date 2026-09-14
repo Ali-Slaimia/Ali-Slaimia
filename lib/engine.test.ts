@@ -132,6 +132,30 @@ describe("progressReducer", () => {
     expect(twice.xp).toBe(once.xp + Math.round(30 * 0.35));
   });
 
+  it("reset clears progress and shows onboarding again", () => {
+    const today = "2026-09-14";
+    const weekId = isoWeekId(today);
+    const started = progressReducer(defaultState(new Date(2026, 8, 14)), {
+      type: "ONBOARD",
+      displayName: "Ali",
+      dailyGoal: 20,
+    });
+    const played = progressReducer(started, {
+      type: "COMPLETE_LESSON",
+      key: "javascript:values",
+      missed: 0,
+      xp: 47,
+      today,
+      weekId,
+      yesterday: "2026-09-13",
+    });
+    const reset = progressReducer(played, { type: "RESET", today, weekId });
+    expect(reset.onboarded).toBe(false);
+    expect(reset.xp).toBe(0);
+    expect(reset.completed).toEqual({});
+    expect(reset.displayName).toBe("You");
+  });
+
   it("ticks daily and weekly XP on date change", () => {
     const state = progressReducer(defaultState(new Date(2026, 8, 14)), {
       type: "COMPLETE_LESSON",

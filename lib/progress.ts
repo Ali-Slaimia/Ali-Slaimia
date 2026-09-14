@@ -119,7 +119,7 @@ export function progressReducer(state: ProgressState, action: ProgressAction): P
     case "TOGGLE_SOUND":
       return { ...state, sound: !state.sound };
     case "RESET":
-      return { ...defaultState(), dailyXpDate: action.today, weekId: action.weekId, onboarded: true };
+      return { ...defaultState(), dailyXpDate: action.today, weekId: action.weekId };
     default:
       return state;
   }
