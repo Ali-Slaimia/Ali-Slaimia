@@ -131,6 +131,14 @@ export default function ProfilePage() {
         >
           Open looply source
         </a>
+        <a
+          href="https://ali-slaimia.github.io/Ali-Slaimia/portfolio/"
+          className="mt-2 inline-flex font-extrabold text-sky underline decoration-2 underline-offset-4"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Ali&apos;s GitHub portfolio
+        </a>
       </section>
 
       <Pressable

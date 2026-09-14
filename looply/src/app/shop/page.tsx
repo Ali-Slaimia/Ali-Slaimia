@@ -21,7 +21,7 @@ export default function ShopPage() {
           const item = SHOP[id];
           const affordable = canAfford(state, id);
           return (
-            <article key={id} className="flex items-center gap-3 rounded-3xl border-2 border-line bg-white p-4">
+            <article key={id} className="flex items-center gap-3 rounded-3xl border-[3px] border-[#14342c] bg-white p-4 shadow-[0_5px_0_#14342c]">
               <div className="grid h-14 w-14 place-items-center rounded-2xl bg-[#e8fff8] text-2xl">{item.emoji}</div>
               <div className="flex-1">
                 <h2 className="font-black">{item.title}</h2>

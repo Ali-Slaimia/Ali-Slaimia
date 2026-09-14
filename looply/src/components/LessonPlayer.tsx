@@ -28,7 +28,7 @@ export function LessonPlayer({ lesson, practice = false }: { lesson: Lesson; pra
 
   if (!practice && state.hearts <= 0 && !done && !feedback) {
     return (
-      <div className="mx-auto flex min-h-dvh w-full max-w-[430px] flex-col items-center justify-center gap-4 bg-sheet px-6 text-center">
+      <div className="phone-shell mx-auto flex min-h-dvh w-full max-w-[430px] flex-col items-center justify-center gap-4 px-6 text-center sm:my-6">
         <Mascot mood="sad" look={state.mascot} className="h-36 w-36" />
         <h1 className="text-3xl font-black">Out of hearts</h1>
         <p className="font-semibold text-muted">They refill tomorrow. A shop pack gets you back in today.</p>
@@ -104,7 +104,7 @@ export function LessonPlayer({ lesson, practice = false }: { lesson: Lesson; pra
 
   if (done) {
     return (
-      <div className="flex min-h-dvh flex-col items-center justify-center gap-4 px-6 text-center">
+      <div className="phone-shell mx-auto flex min-h-dvh w-full max-w-[430px] flex-col items-center justify-center gap-4 px-6 text-center sm:my-6">
         <Mascot mood="celebrate" look={state.mascot} className="h-40 w-40" />
         <p className="text-sm font-extrabold uppercase tracking-widest text-mint-dark">Lesson complete</p>
         <h1 className="text-4xl font-black">{wrong === 0 ? "Flawless!" : "Shipped."}</h1>
@@ -124,12 +124,12 @@ export function LessonPlayer({ lesson, practice = false }: { lesson: Lesson; pra
   }
 
   return (
-    <div className="mx-auto flex min-h-dvh w-full max-w-[430px] flex-col bg-sheet px-4 pb-6 pt-3">
+      <div className="phone-shell mx-auto flex min-h-dvh w-full max-w-[430px] flex-col px-4 pb-6 pt-5 sm:my-6">
       <div className="mb-4 flex items-center gap-3">
         <Link href="/" className="grid h-10 w-10 place-items-center rounded-full text-xl text-muted" aria-label="Close lesson">
           ✕
         </Link>
-        <div className="h-4 flex-1 overflow-hidden rounded-full bg-line">
+        <div className="h-4 flex-1 overflow-hidden rounded-full border-2 border-[#14342c] bg-[#e7f8ef]">
           <div className="h-full rounded-full bg-mint transition-all" style={{ width: `${progress}%` }} />
         </div>
         <span className="text-sm font-extrabold text-heart">❤️ {practice ? "∞" : state.hearts}</span>

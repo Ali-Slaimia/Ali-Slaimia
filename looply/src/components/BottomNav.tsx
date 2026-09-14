@@ -15,7 +15,7 @@ const items = [
 export function BottomNav() {
   const pathname = usePathname();
   return (
-    <nav className="sticky bottom-0 z-20 grid grid-cols-5 border-t border-line bg-white/95 px-1 py-2 backdrop-blur">
+    <nav className="sticky bottom-0 z-20 grid grid-cols-5 border-t-2 border-[#14342c] bg-white px-1 py-2">
       {items.map((item) => {
         const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
         return (
@@ -23,8 +23,8 @@ export function BottomNav() {
             key={item.href}
             href={item.href}
             className={cn(
-              "flex flex-col items-center gap-1 rounded-xl py-1 text-[11px] font-extrabold uppercase",
-              active ? "bg-[#e8fff8] text-mint-dark" : "text-muted",
+              "flex flex-col items-center gap-1 rounded-2xl py-1.5 text-[11px] font-extrabold uppercase",
+              active ? "bg-[#2ee59d] text-[#07342c] shadow-[0_3px_0_#12a56f]" : "text-muted",
             )}
           >
             <span className="text-lg leading-none">{item.icon}</span>

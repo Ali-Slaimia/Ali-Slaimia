@@ -8,7 +8,7 @@ function HydrateGate({ children }: { children: ReactNode }) {
   const { hydrated } = useGame();
   if (!hydrated) {
     return (
-      <div className="mx-auto flex min-h-dvh w-full max-w-[430px] flex-col items-center justify-center bg-sheet px-6 py-8 text-center">
+      <div className="phone-shell mx-auto flex min-h-dvh w-full max-w-[430px] flex-col items-center justify-center bg-sheet px-6 py-8 text-center sm:my-6">
         <Mascot mood="happy" className="h-32 w-32" />
         <p className="mt-4 text-lg font-black">Looking for your save…</p>
         <p className="mt-2 text-sm font-semibold text-muted">Checking this network and this browser.</p>

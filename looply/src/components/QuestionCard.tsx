@@ -60,7 +60,7 @@ export function QuestionCard({
               disabled={disabled}
               onClick={() => setSelected(option)}
               className={cn(
-                "rounded-2xl border-2 border-b-4 px-4 py-3 text-left font-bold",
+                "rounded-2xl border-[3px] border-b-4 px-4 py-3 text-left font-bold",
                 selected === option ? "border-sky bg-[#ebf3ff] text-sky" : "border-line bg-white",
               )}
             >
